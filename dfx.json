@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "nexusblogs_backend": {
+      "candid": "src/nexusblogs_backend/nexusblogs_backend.did",
+      "package": "nexusblogs_backend",
+      "type": "rust"
+    },
+    "nexusblogs_frontend": {
+      "dependencies": [
+        "nexusblogs_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/nexusblogs_frontend/src/index.html"
+      },
+      "source": [
+        "src/nexusblogs_frontend/assets",
+        "dist/nexusblogs_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": "mops sources"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
