@@ -1,4 +1,8 @@
 [workspace]
 members = [
-    "src/nexusblogs_backend",
+    "src/nexusblocks_backend/main",
+    "src/nexusblocks_backend/platform",
+    "src/nexusblocks_backend/platform_manager",
+    "src/nexusblocks_backend/user",
+    "src/nexusblocks_backend/user_manager",
 ]

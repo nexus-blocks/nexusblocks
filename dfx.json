@@ -1,20 +1,38 @@
 {
   "canisters": {
-    "nexusblogs_backend": {
-      "candid": "src/nexusblogs_backend/nexusblogs_backend.did",
-      "package": "nexusblogs_backend",
+    "main": {
+      "candid": "src/nexusblocks_backend/main/main.did",
+      "package": "main",
       "type": "rust"
     },
-    "nexusblogs_frontend": {
-      "dependencies": [
-        "nexusblogs_backend"
-      ],
+    "platform": {
+      "candid": "src/nexusblocks_backend/platform/platform.did",
+      "package": "platform",
+      "type": "rust"
+    },
+    "user": {
+      "candid": "src/nexusblocks_backend/user/user.did",
+      "package": "user",
+      "type": "rust"
+    },
+    "platform_manager": {
+      "candid": "src/nexusblocks_backend/platform_manager/platform_manager.did",
+      "package": "platform_manager",
+      "type": "rust"
+    },
+    "user_manager": {
+      "candid": "src/nexusblocks_backend/user_manager/user_manager.did",
+      "package": "user_manager",
+      "type": "rust"
+    },
+    "nexusblocks_frontend": {
+      "dependencies": ["main"],
       "frontend": {
-        "entrypoint": "src/nexusblogs_frontend/src/index.html"
+        "entrypoint": "src/nexusblocks_frontend/src/index.html"
       },
       "source": [
-        "src/nexusblogs_frontend/assets",
-        "dist/nexusblogs_frontend/"
+        "src/nexusblocks_frontend/assets",
+        "dist/nexusblocks_frontend/"
       ],
       "type": "assets"
     }
@@ -22,7 +40,7 @@
   "defaults": {
     "build": {
       "args": "",
-      "packtool": "mops sources"
+      "packtool": ""
     }
   },
   "output_env_file": ".env",
