@@ -2,3 +2,6 @@
 fn greet(name: String) -> String {
     format!("Hello, {}!", name)
 }
+
+// need this to generate candid
+ic_cdk::export_candid!();

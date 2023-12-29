@@ -1,3 +1,63 @@
+type Error = variant { NotFound : record { msg : text } };
+type Platform = record {
+  id : text;
+  cover_image : text;
+  name : text;
+  canister_id : text;
+  created_at : text;
+};
+type PlatformPayload = record { id : text; cover_image : text; name : text };
+type ProfileBody = record {
+  username : text;
+  canister_id : opt text;
+  email : text;
+  topics : vec Topic;
+  first_name : text;
+  last_name : text;
+  platforms_following : vec text;
+};
+type Result = variant { Ok : Platform; Err : Error };
+type Result_1 = variant { Ok : Topic; Err : Error };
+type Result_2 = variant { Ok : UserProfile; Err : Error };
+type Topic = record {
+  id : text;
+  cover_image : text;
+  name : text;
+  description : text;
+  created_at : text;
+};
+type TopicPayload = record {
+  id : text;
+  cover_image : text;
+  name : text;
+  description : text;
+};
+type UserProfile = record {
+  id : text;
+  updated_at : opt text;
+  created_at : text;
+  principal_id : text;
+  profile_body : opt ProfileBody;
+};
+type UserProfilePayload = record {
+  id : text;
+  principal_id : text;
+  profile_body : opt ProfileBody;
+};
 service : {
-    "greet": (text) -> (text) query;
+  add_platform : (PlatformPayload) -> (Platform);
+  add_topic : (TopicPayload) -> (Topic);
+  add_user_profile : (UserProfilePayload) -> (UserProfile);
+  delete_platform : (text) -> (bool);
+  delete_topic : (text) -> (bool);
+  delete_user_profile : (text) -> (bool);
+  get_all_platforms : () -> (vec Platform) query;
+  get_all_topics : () -> (vec Topic) query;
+  get_all_users : () -> (vec UserProfile) query;
+  get_platform : (text) -> (Result) query;
+  get_topic : (text) -> (Result_1) query;
+  get_user_profile : (text) -> (Result_2) query;
+  update_platform : (Platform) -> (Platform);
+  update_topic : (Topic) -> (Topic);
+  update_user_profile : (UserProfile) -> (UserProfile);
 }
