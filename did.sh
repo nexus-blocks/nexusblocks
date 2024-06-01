@@ -3,7 +3,7 @@
 
 function generate_did() {
   local canister=$1
-  canister_root="src/nexusblocks_backend/$canister"
+  canister_root="backend/$canister"
 
   cargo build --manifest-path="$canister_root/Cargo.toml" \
       --target wasm32-unknown-unknown \

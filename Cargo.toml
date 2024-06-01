@@ -1,10 +1,10 @@
 [workspace]
 members = [
-    "src/nexusblocks_backend/main",
-    "src/nexusblocks_backend/platform",
-    "src/nexusblocks_backend/platform_manager",
-    "src/nexusblocks_backend/user",
-    "src/nexusblocks_backend/user_manager",
+    "backend/main",
+    "backend/platform",
+    "backend/platform_manager",
+    "backend/user",
+    "backend/user_manager",
 ]
 
 [workspace.dependencies]

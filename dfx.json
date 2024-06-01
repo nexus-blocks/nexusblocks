@@ -1,38 +1,38 @@
 {
   "canisters": {
     "main": {
-      "candid": "src/nexusblocks_backend/main/main.did",
+      "candid": "backend/main/main.did",
       "package": "main",
       "type": "rust"
     },
     "platform": {
-      "candid": "src/nexusblocks_backend/platform/platform.did",
+      "candid": "backend/platform/platform.did",
       "package": "platform",
       "type": "rust"
     },
     "user": {
-      "candid": "src/nexusblocks_backend/user/user.did",
+      "candid": "backend/user/user.did",
       "package": "user",
       "type": "rust"
     },
     "platform_manager": {
-      "candid": "src/nexusblocks_backend/platform_manager/platform_manager.did",
+      "candid": "backend/platform_manager/platform_manager.did",
       "package": "platform_manager",
       "type": "rust"
     },
     "user_manager": {
-      "candid": "src/nexusblocks_backend/user_manager/user_manager.did",
+      "candid": "backend/user_manager/user_manager.did",
       "package": "user_manager",
       "type": "rust"
     },
-    "nexusblocks_frontend": {
+    "frontend": {
       "dependencies": ["main"],
       "frontend": {
-        "entrypoint": "src/nexusblocks_frontend/src/index.html"
+        "entrypoint": "src/index.html"
       },
       "source": [
-        "src/nexusblocks_frontend/assets",
-        "dist/nexusblocks_frontend/"
+        "src/assets",
+        "dist/"
       ],
       "type": "assets"
     }
